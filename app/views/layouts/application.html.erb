@@ -18,6 +18,15 @@
     <%= link_to "Book Review", root_path, class: "navbar-brand" %>
    
  </div>
+
+ <ul  class="nav navbar-nav">
+   <li><%= link_to "Registrar", new_user_registration_path %></li>
+   <% if user_signed_in? %>
+   <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
+   <% else %>
+   <li><%= link_to "Ingresar",new_user_session_path %></li>
+   <% end %>
+ </ul>
    
  </div>
 
