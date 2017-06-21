@@ -1,3 +1,9 @@
 <h1> Editar Libro</h1>
 
-<%= render 'form' %>
+<%= simple_form_for @book do |f| %>
+  <%= select_tag(:category_id, options_for_select(@categories), :prompt => "Selecciona una categoría") %>
+  <%= f.input :title, label: " Título del Libro" %>
+  <%= f.input :description, label: "Descripción del libro" %>
+  <%= f.input :author, label: "Autor" %>
+  <%= f.button :submit %>
+<% end %>
